@@ -1,41 +1,69 @@
 *{
-margin: 0; 
-padding: 0; 
-box-sizing: border-box;
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #151515;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #FFBF00;
 }
 
 body{
-    font-family: sans-serif;
-    background-color: #1e1e1e;
+    font-family: 'Outfit', sans-serif;
+    background-color: #151515;
     color: #a0a0a0;
     line-height: 1.6;
+    font-size: 16px;
 }
+
 .main-container{
-    display:grid;
+    display: grid;
     max-width: 1200px;
     grid-template-columns: 350px 1fr;
     gap: 40px;
     padding-top: 40px;
+    padding-bottom: 40px;
     margin: 0 auto;
-
 }
 
 .sidebar{
-    background-color: #2a2a2a;
-   height: 90vh;
-   border: 1px solid #3a3a3a;
+   background-color: rgba(42, 42, 42, 0.4);
+   backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px);
+   height: auto;
+   min-height: 85vh;
+   border: 1px solid rgba(255, 255, 255, 0.08);
    border-radius: 16px;
    padding: 40px;
    position: sticky;
    top: 40px;
+   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
+
 .main-content{
-    background-color: #2a2a2a;
-    border: 1px solid #3a3a3a;
+   background-color: rgba(42, 42, 42, 0.4);
+   backdrop-filter: blur(10px);
+   -webkit-backdrop-filter: blur(10px);
+   border: 1px solid rgba(255, 255, 255, 0.08);
    border-radius: 16px;
    padding: 40px;
-
+   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
+
 .profile img{
     width: 120px;
     height: 120px;
@@ -43,14 +71,16 @@ body{
     border: 1px solid #e0e0e0;
     object-fit: cover;
 }
+
 .profile h2{
-    font-size: 1.5rem;
+    font-size: 24px;
     font-weight: 700;
     margin-top: 20px;
     color: #e0e0e0;
 }
+
 .profile p{
-    font-size: 0.8rem;
+    font-size: 13px;
     color: #FFBF00;
     margin-top: 10px;
     background-color: #1e1e1e;
@@ -58,36 +88,41 @@ body{
     border: 1px solid #3a3a3a;
     border-radius: 8px;
     display: inline-block;
-    
 }
+
 .profile{
     text-align: center;
 }
+
 .contact{
     margin-top: 30px;
     border-top: 2px solid #3a3a3a;
     padding-top: 20px;
 }
+
 .label{
-    font-size: 0.8rem;
+    font-size: 13px;
     color: #a0a0a0;
     font-weight: 500;
 }
+
 .value{
-    
     color: #fbf6f6;
-    text-decoration:none;
+    text-decoration: none;
+    font-size: 16px;
 }
-.email,.phone,.location{
-    
+
+.email, .phone, .location{
     margin-top: 15px;
 }
+
 .social{
     margin-top: 30px;
     border-top: 2px solid #3a3a3a;
     padding-top: 20px;  
     text-align: center;
 }
+
 .social img{
     height: 24px;
     width: 24px;
@@ -95,33 +130,62 @@ body{
     filter: grayscale(1) invert(0.7);
     transition: all 0.3s ease;
 }
+
 .social img:hover{
     filter: grayscale(0) invert(0);
 }
+
+.resume-container {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.resume-btn {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #FFBF00, #d49e00);
+    color: #1a1a1a;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 191, 0, 0.2);
+}
+
+.resume-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 191, 0, 0.4);
+    background: linear-gradient(135deg, #ffd040, #FFBF00);
+}
+
 #navigation{
-    
     border-bottom: 2px solid #3a3a3a;
     margin-bottom: 20px;
     padding-bottom: 20px;
 }
+
 nav{
     display: flex;
     justify-content: flex-end;
     gap: 20px;
 }
+
 nav a{
     text-decoration: none;
     color: #a0a0a0;
-    font-size: 1.1rem;
+    font-size: 18px;
     font-weight: 500;
     transition: color 0.3s ease;
-    
 }
+
 .active, nav a:hover{
     color: #FFBF00;
 }
+
 .heading{
-    font-size: 2rem;
+    font-size: 32px;
     color: #e0e0e0;
     margin-bottom: 15px;
 }
@@ -132,84 +196,89 @@ nav a{
     width: 40px;
     margin-bottom: 20px;
 }
+
 .content{
     text-align: justify;
     color: #a0a0a0;
 }
+
 #about{
     margin-bottom: 40px;
 }
+
 .grid-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 40px;
 }
+
 .item{
     padding: 20px;
-    border-radius: 10px;
-    border: 2px solid #3a3a3a;
-    background-color: #1e1e1e;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background-color: rgba(30, 30, 30, 0.4);
     text-align: center;
     margin-top: 20px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease, border-color 0.3s ease;
 }
+
 .item img{
     width: 48px;
     height: 48px;
     filter: invert(75%) sepia(50%) saturate(1000%) hue-rotate(350deg) brightness(110%) contrast(101%);
-    
 }
+
 .item h3{
-    font-size: 1rem;
+    font-size: 16px;
     font-weight: 500;
+    margin-top: 10px;
 }
+
 .item:hover{
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px #FFBF00;
+    transform: translateY(-5px);
+    border-color: rgba(255, 191, 0, 0.4);
+    box-shadow: 0 8px 24px rgba(255, 191, 0, 0.1);
 }
+
 #education{
     margin-top: 20px;
 }
+
 .year{
-    font-size: 0.9rem;
+    font-size: 14px;
     margin-bottom: 5px;
     color: #a0a0a0;
 }
+
 .degree{
-    font-size: 1.2rem;
+    font-size: 19px;
     font-weight: 500;
     color: #e0e0e0;
     margin-bottom: 5px;
 }
+
 .college{
     font-style: italic;
     color: #a0a0a0;
     margin-bottom: 10px;
-
 }
+
 .description{
     color: #a0a0a0;
+    font-size: 15px;
 }
+
 .edtech{
     position: relative; 
     margin-top: 30px;
 }
-.edfirst{
-    
+
+.edfirst, .edsecond, .edthird{
     margin-bottom: 35px;
     position: relative;
     padding-left: 30px;
 }
-.edsecond{
-    margin-bottom: 35px;
-    position: relative;
-    padding-left: 30px;
-}
-.edthird{
-    margin-bottom: 35px;
-    position: relative;
-    padding-left: 30px;
-}   
+
 .goal{
     height: 15px;
     width: 15px;
@@ -220,6 +289,7 @@ nav a{
     left: 0;
     z-index: 5;
 }
+
 .liner{
     position: absolute;
     top: 0px;
@@ -228,63 +298,251 @@ nav a{
     border: 2px solid #3a3a3a;
     left: 5.5px;
 }
+
 .projectcontainer{
     margin-top: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px;
 }
+
 .project img{
     width: 100%;
     height: 180px;
     object-fit: cover;
     border-radius: 10px;
 }
-.project-card{
-    border: 1px solid #3a3a3a;
-    border-radius: 12px;
-    overflow: hidden;
-    background-color: #1e1e1e;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
+
 .card{
     padding: 20px;
 }
+
 .card h3{
     color: #e0e0e0;
     margin-bottom: 10px;
+    font-size: 18px;
 }
+
 .card p{
     color: #a0a0a0;
     line-height: 1.6;
     margin-bottom: 15px;
+    font-size: 14px;
 }
+
+.tags {
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
 .card span{
     color: #FFBF00;
     background-color: rgba(255, 191, 0, 0.1);
-    padding: 5px 20px;
-    border-radius: 5px;
-    font-size: 0.75rem;
-    margin-right: 5px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid rgba(255, 191, 0, 0.2);
 }
+
 .project{
-    background-color: #1e1e1e;
+    background-color: rgba(30, 30, 30, 0.6);
     border-radius: 12px;
-    border: 1px solid #3a3a3a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     overflow: hidden;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
+
 .project:hover{
-    transform: translateY(-10px);
-    box-shadow: 0px 10px 20px rgba(255, 191, 0, 0.5);
+    transform: translateY(-8px);
+    border-color: rgba(255, 191, 0, 0.4);
+    box-shadow: 0 12px 30px rgba(255, 191, 0, 0.12);
 }
-@media screen and (max-width:768px) {
-    .main-container{
+
+.project-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.proj-link {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.proj-link:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.demo-link {
+    background-color: rgba(255, 191, 0, 0.1);
+    border-color: rgba(255, 191, 0, 0.2);
+    color: #FFBF00;
+}
+
+.demo-link:hover {
+    background-color: rgba(255, 191, 0, 0.2);
+    border-color: #FFBF00;
+}
+
+/* ==========================================================================
+   Media Queries for Responsiveness (PX values only)
+   ========================================================================== */
+
+@media screen and (max-width: 1024px) {
+    .main-container {
         grid-template-columns: 1fr;
-        padding: 20px;
+        gap: 30px;
+        padding: 30px 20px;
     }
-    .sidebar{
+    .sidebar {
         position: static;
         height: auto;
+        min-height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar, .main-content {
+        padding: 30px 20px;
+    }
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    /* Portfolio projects inline 2 in mobile view */
+    .projectcontainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    .project img {
+        height: 120px;
+    }
+    .card {
+        padding: 12px;
+    }
+    .card h3 {
+        font-size: 15px;
+    }
+    .card p {
+        font-size: 12px;
+        margin-bottom: 10px;
+    }
+    .card span {
+        padding: 3px 8px;
+        font-size: 10px;
+    }
+    .proj-link {
+        padding: 6px 4px;
+        font-size: 11px;
+    }
+    
+    /* Skills inline 4 in mobile view */
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+    }
+    .item {
+        padding: 12px 6px;
+        margin-top: 10px;
+    }
+    .item img {
+        width: 32px;
+        height: 32px;
+    }
+    .item h3 {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Mobile view text font sizes smaller */
+    body {
+        font-size: 13px;
+    }
+    .sidebar, .main-content {
+        padding: 20px 12px;
+        border-radius: 12px;
+    }
+    .profile img {
+        width: 90px;
+        height: 90px;
+    }
+    .profile h2 {
+        font-size: 19px;
+    }
+    .profile p {
+        font-size: 11px;
+    }
+    .label {
+        font-size: 12px;
+    }
+    .value {
+        font-size: 13px;
+    }
+    .heading {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+    .content {
+        font-size: 13px;
+    }
+    nav a {
+        font-size: 13px;
+    }
+    
+    /* Fine-tuning timeline for small mobile screens */
+    .degree {
+        font-size: 15px;
+    }
+    .college {
+        font-size: 13px;
+    }
+    .description {
+        font-size: 12px;
+    }
+    
+    /* Fine-tuning inline 2 projects on small mobile screens */
+    .project img {
+        height: 90px;
+    }
+    .card h3 {
+        font-size: 13px;
+    }
+    .card p {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+    .tags {
+        gap: 4px;
+        margin-bottom: 8px;
+    }
+    .card span {
+        padding: 2px 6px;
+        font-size: 10px;
+    }
+    .project-links {
+        gap: 4px;
+        margin-top: 8px;
+    }
+    .proj-link {
+        padding: 5px 3px;
+        font-size: 10px;
     }
 }
